@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "scrollguard-etl"
+version = "0.1.0"
+description = ""
+authors = ["josh005 <imjbmkz@gmail.com>"]
+readme = "README.md"
+packages = [{include = "scrollguard_etl", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.3"
+pandas = "^2.2.2"
+jellyfish = "^1.1.0"
+pymongo = "^4.8.0"
+pytest = "^8.3.2"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

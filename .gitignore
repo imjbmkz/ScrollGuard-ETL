@@ -1,0 +1,4 @@
+logs/*
+data_dump/*
+*__pycache__*
+*old_config.json

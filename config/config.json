@@ -1,0 +1,73 @@
+{
+
+    "SOURCES": [
+
+        {
+            "NAME": "SANCTIONS_LIST_EU",
+            "FORMAT": "CSV",
+            "URL": "https://webgate.ec.europa.eu/fsd/fsf/public/files/csvFullSanctionsList_1_1/content?token=dG9rZW4tMjAxNw"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_HM",
+            "FORMAT": "CSV",
+            "URL": "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.csv"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_OFAC_SDN",
+            "FORMAT": "CSV",
+            "URL": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_OFAC_ADD",
+            "FORMAT": "CSV",
+            "URL": "https://www.treasury.gov/ofac/downloads/add.csv"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_OFAC_ALT",
+            "FORMAT": "CSV",
+            "URL": "https://www.treasury.gov/ofac/downloads/alt.csv"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_CONS_PRIM",
+            "FORMAT": "CSV",
+            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_prim.csv"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_CONS_ADD",
+            "FORMAT": "CSV",
+            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_add.csv"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_CONS_ALT",
+            "FORMAT": "CSV",
+            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_alt.csv"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_UN",
+            "FORMAT": "XML",
+            "URL": "https://scsanctions.un.org/resources/xml/en/consolidated.xml"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_CA_SANCTIONS",
+            "FORMAT": "XML",
+            "URL": "https://www.international.gc.ca/world-monde/assets/office_docs/international_relations-relations_internationales/sanctions/sema-lmes.xml"
+        },
+
+        {
+            "NAME": "SANCTIONS_LIST_AU_SANCTIONS",
+            "FORMAT": "XLSX",
+            "URL": "https://www.dfat.gov.au/sites/default/files/regulation8_consolidated.xlsx"
+        }
+
+    ]
+
+}
