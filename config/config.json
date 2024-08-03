@@ -5,67 +5,223 @@
         {
             "NAME": "SANCTIONS_LIST_EU",
             "FORMAT": "CSV",
-            "URL": "https://webgate.ec.europa.eu/fsd/fsf/public/files/csvFullSanctionsList_1_1/content?token=dG9rZW4tMjAxNw"
+            "URL": "https://webgate.ec.europa.eu/fsd/fsf/public/files/csvFullSanctionsList_1_1/content?token=dG9rZW4tMjAxNw",
+            "PARAMS": {
+                "delimiter": ";",
+                "low_memory": false
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_HM",
             "FORMAT": "CSV",
-            "URL": "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.csv"
+            "URL": "https://ofsistorage.blob.core.windows.net/publishlive/2022format/ConList.csv",
+            "PARAMS": {
+                "skiprows": 1
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_OFAC_SDN",
             "FORMAT": "CSV",
-            "URL": "https://www.treasury.gov/ofac/downloads/sdn.csv"
+            "URL": "https://www.treasury.gov/ofac/downloads/sdn.csv",
+            "PARAMS": {
+                "na_values": "-0- ",
+                "engine": "python",
+                "skipfooter": 1,
+                "names": [
+                    "ent_num",
+                    "sdn_name",
+                    "sdn_type",
+                    "program",
+                    "title",
+                    "call_sign",
+                    "vess_type",
+                    "tonnage",
+                    "grt",
+                    "vess_flag",
+                    "vess_owner",
+                    "remarks"
+                ]
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_OFAC_ADD",
             "FORMAT": "CSV",
-            "URL": "https://www.treasury.gov/ofac/downloads/add.csv"
+            "URL": "https://www.treasury.gov/ofac/downloads/add.csv",
+            "PARAMS": {
+                "na_values": "-0- ",
+                "engine": "python",
+                "skipfooter": 1,
+                "names": [
+                    "ent_num",
+                    "add_num",
+                    "address",
+                    "city_state_province_postalcode",
+                    "country",
+                    "address_remarks"
+                ]
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_OFAC_ALT",
             "FORMAT": "CSV",
-            "URL": "https://www.treasury.gov/ofac/downloads/alt.csv"
+            "URL": "https://www.treasury.gov/ofac/downloads/alt.csv",
+            "PARAMS": {
+                "na_values": "-0- ",
+                "engine": "python",
+                "skipfooter": 1,
+                "names": [
+                    "ent_num",
+                    "alt_num",
+                    "alt_type",
+                    "alt_name",
+                    "alt_remarks"
+                ]
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_CONS_PRIM",
             "FORMAT": "CSV",
-            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_prim.csv"
+            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_prim.csv",
+            "PARAMS": {
+                "na_values": "-0- ",
+                "engine": "python",
+                "skipfooter": 1,
+                "names": [
+                    "ent_num",
+                    "sdn_name",
+                    "sdn_type",
+                    "program",
+                    "title",
+                    "call_sign",
+                    "vess_type",
+                    "tonnage",
+                    "grt",
+                    "vess_flag",
+                    "vess_owner",
+                    "remarks"
+                ]
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_CONS_ADD",
             "FORMAT": "CSV",
-            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_add.csv"
+            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_add.csv",
+            "PARAMS": {
+                "na_values": "-0- ",
+                "engine": "python",
+                "skipfooter": 1,
+                "names": [
+                    "ent_num",
+                    "add_num",
+                    "address",
+                    "city_state_province_postalcode",
+                    "country",
+                    "address_remarks"
+                ]
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_CONS_ALT",
             "FORMAT": "CSV",
-            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_alt.csv"
+            "URL": "https://www.treasury.gov/ofac/downloads/consolidated/cons_alt.csv",
+            "PARAMS": {
+                "na_values": "-0- ",
+                "engine": "python",
+                "skipfooter": 1,
+                "names": [
+                    "ent_num",
+                    "alt_num",
+                    "alt_type",
+                    "alt_name",
+                    "alt_remarks"
+                ]
+            }
         },
 
         {
             "NAME": "SANCTIONS_LIST_UN",
             "FORMAT": "XML",
-            "URL": "https://scsanctions.un.org/resources/xml/en/consolidated.xml"
+            "URL": "https://scsanctions.un.org/resources/xml/en/consolidated.xml",
+            "OUTPUTS": [
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_INDIVIDUALS",
+                    "XPATH": "/CONSOLIDATED_LIST/INDIVIDUALS/INDIVIDUAL",
+                    "COLUMNS": [
+                        "DATAID",
+                        "VERSIONNUM",
+                        "FIRST_NAME",
+                        "SECOND_NAME",
+                        "THIRD_NAME",
+                        "UN_LIST_TYPE",
+                        "REFERENCE_NUMBER",
+                        "LISTED_ON",
+                        "NAME_ORIGINAL_SCRIPT",
+                        "COMMENTS1"
+                    ]
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_INDIVIDUAL_ALIAS",
+                    "XPATH": "/CONSOLIDATED_LIST/INDIVIDUALS/INDIVIDUAL",
+                    "COLUMNS": [
+                        "DATAID",
+                        "INDIVIDUAL_ALIAS"
+                    ],
+                    "META": "DATAID",
+                    "RECORD": "INDIVIDUAL_ALIAS"
+                }
+            ]
         },
 
         {
             "NAME": "SANCTIONS_LIST_CA_SANCTIONS",
             "FORMAT": "XML",
-            "URL": "https://www.international.gc.ca/world-monde/assets/office_docs/international_relations-relations_internationales/sanctions/sema-lmes.xml"
+            "URL": "https://www.international.gc.ca/world-monde/assets/office_docs/international_relations-relations_internationales/sanctions/sema-lmes.xml",
+            "OUTPUTS": [
+                {
+                    "LABEL": "SANCTIONS_LIST_CA_SANCTIONS",
+                    "XPATH": "/data-set/record",
+                    "COLUMNS": [
+                        "Country",
+                        "LastName",
+                        "GivenName",
+                        "Schedule",
+                        "Item",
+                        "DateOfBirth",
+                        "Aliases",
+                        "Entity",
+                        "Title"
+                    ]
+                }
+            ]
         },
 
         {
             "NAME": "SANCTIONS_LIST_AU_SANCTIONS",
             "FORMAT": "XLSX",
-            "URL": "https://www.dfat.gov.au/sites/default/files/regulation8_consolidated.xlsx"
+            "URL": "https://www.dfat.gov.au/sites/default/files/regulation8_consolidated.xlsx",
+            "PARAMS": {
+                "names": [
+                    "reference",
+                    "full_name",
+                    "type",
+                    "name_type",
+                    "date_of_birth",
+                    "place_of_birth",
+                    "citizenship",
+                    "address",
+                    "additional_information",
+                    "listing_information",
+                    "committees",
+                    "control_date"
+                ]
+            }
         }
 
     ]
