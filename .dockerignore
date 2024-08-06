@@ -1,0 +1,14 @@
+# Poetry files
+.pytest_cache/*
+.venv/*
+
+# Folders
+logs
+data_dump
+
+# Others
+*__pycache__*
+*old_config.json
+*.ipynb
+poetry.lock
+pyproject.toml

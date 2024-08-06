@@ -163,7 +163,9 @@
                         "REFERENCE_NUMBER",
                         "LISTED_ON",
                         "NAME_ORIGINAL_SCRIPT",
-                        "COMMENTS1"
+                        "COMMENTS1",
+                        "GENDER",
+                        "FOURTH_NAME"
                     ]
                 },
                 {
@@ -171,10 +173,110 @@
                     "XPATH": "/CONSOLIDATED_LIST/INDIVIDUALS/INDIVIDUAL",
                     "COLUMNS": [
                         "DATAID",
-                        "INDIVIDUAL_ALIAS"
+                        "QUALITY",
+                        "ALIAS_NAME",
+                        "DATE_OF_BIRTH",
+                        "NOTE",
+                        "CITY_OF_BIRTH",
+                        "COUNTRY_OF_BIRTH"
                     ],
                     "META": "DATAID",
                     "RECORD": "INDIVIDUAL_ALIAS"
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_INDIVIDUAL_NATIONALITY",
+                    "XPATH": "/CONSOLIDATED_LIST/INDIVIDUALS/INDIVIDUAL",
+                    "COLUMNS": [
+                        "DATAID",
+                        "VALUE"
+                    ],
+                    "META": "DATAID",
+                    "RECORD": "NATIONALITY"
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_INDIVIDUAL_ADDRESS",
+                    "XPATH": "/CONSOLIDATED_LIST/INDIVIDUALS/INDIVIDUAL",
+                    "COLUMNS": [
+                        "DATAID",
+                        "COUNTRY",
+                        "STREET",
+                        "CITY",
+                        "STATE_PROVINCE",
+                        "NOTE",
+                        "ZIP_CODE"
+                    ],
+                    "META": "DATAID",
+                    "RECORD": "INDIVIDUAL_ADDRESS"
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_INDIVIDUAL_DATE_OF_BIRTH",
+                    "XPATH": "/CONSOLIDATED_LIST/INDIVIDUALS/INDIVIDUAL",
+                    "COLUMNS": [
+                        "DATAID",
+                        "TYPE_OF_DATE",
+                        "YEAR",
+                        "FROM_YEAR",
+                        "TO_YEAR",
+                        "NOTE",
+                        "DATE"
+                    ],
+                    "META": "DATAID",
+                    "RECORD": "INDIVIDUAL_DATE_OF_BIRTH"
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_INDIVIDUAL_PLACE_OF_BIRTH",
+                    "XPATH": "/CONSOLIDATED_LIST/INDIVIDUALS/INDIVIDUAL",
+                    "COLUMNS": [
+                        "DATAID",
+                        "CITY",
+                        "STATE_PROVINCE",
+                        "COUNTRY",
+                        "NOTE",
+                        "STREET"
+                    ],
+                    "META": "DATAID",
+                    "RECORD": "INDIVIDUAL_PLACE_OF_BIRTH"
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_ENTITIES",
+                    "XPATH": "/CONSOLIDATED_LIST/ENTITIES/ENTITY",
+                    "COLUMNS": [
+                        "DATAID",
+                        "VERSIONNUM",
+                        "FIRST_NAME",
+                        "UN_LIST_TYPE",
+                        "REFERENCE_NUMBER",
+                        "LISTED_ON",
+                        "COMMENTS1",
+                        "NAME_ORIGINAL_SCRIPT"
+                    ]
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_ENTITY_ALIAS",
+                    "XPATH": "/CONSOLIDATED_LIST/ENTITIES/ENTITY",
+                    "COLUMNS": [
+                        "DATAID",
+                        "QUALITY",
+                        "ALIAS_NAME",
+                        "NOTE"
+                    ],
+                    "META": "DATAID",
+                    "RECORD": "ENTITY_ALIAS"
+                },
+                {
+                    "LABEL": "SANCTIONS_LIST_UN_ENTITY_ADDRESS",
+                    "XPATH": "/CONSOLIDATED_LIST/ENTITIES/ENTITY",
+                    "COLUMNS": [
+                        "DATAID",
+                        "STREET",
+                        "CITY",
+                        "COUNTRY",
+                        "ZIP_CODE",
+                        "STATE_PROVINCE",
+                        "NOTE"
+                    ],
+                    "META": "DATAID",
+                    "RECORD": "ENTITY_ADDRESS"
                 }
             ]
         },

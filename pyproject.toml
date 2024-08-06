@@ -18,6 +18,8 @@ openpyxl = "^3.1.5"
 ipykernel = "^6.29.5"
 lxml = "^5.2.2"
 xmltodict = "^0.13.0"
+numpy = "^2.0.1"
+prefect = "^2.20.0"
 
 
 [build-system]
