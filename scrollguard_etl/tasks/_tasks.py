@@ -1,10 +1,8 @@
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
-from prefect import task
 from ..utils import get_config
 from ..etl import extract_source, extract_from_csv, extract_from_excel, extract_xml, load_to_csv, transform_normalize_dict
 
-@task
 def task_extract_sources():
     source_config = get_config()["SOURCES"]
 
@@ -21,7 +19,6 @@ def task_extract_sources():
             # Save the file in the data_dump/raw folder
             executor.submit(extract_source, url, destination_file)
 
-@task
 def task_transform_sources():
     source_config = get_config()["SOURCES"]
 

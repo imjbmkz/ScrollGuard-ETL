@@ -1,9 +1,7 @@
 from datetime import datetime
-from prefect import flow
 from scrollguard_etl.utils import logger
 from scrollguard_etl.tasks import task_extract_sources, task_transform_sources
 
-@flow(name="scrollguard-main-flow")
 def flow_main():
     
     start_time = datetime.now()
