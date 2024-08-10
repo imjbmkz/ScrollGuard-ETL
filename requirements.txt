@@ -8,3 +8,5 @@ ipykernel==6.29.5
 lxml==5.2.2
 xmltodict==0.13.0
 numpy==2.0.1
+azure-storage-blob==12.22.0
+python-dotenv==1.0.1

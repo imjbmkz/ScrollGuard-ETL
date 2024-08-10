@@ -1,7 +1,7 @@
 from pathlib import Path
 from concurrent.futures import ProcessPoolExecutor
-from ..utils import get_config
-from ..etl import extract_source, extract_from_csv, extract_from_excel, extract_xml, load_to_csv, transform_normalize_dict
+from ..utils import get_config, get_blob_service_client_connection_string
+from ..etl import extract_source, extract_from_csv, extract_from_excel, extract_xml, transform_normalize_dict, load_to_csv, upload_blob_file
 
 def task_extract_sources():
     source_config = get_config()["SOURCES"]
@@ -64,3 +64,10 @@ def task_transform_sources():
                     load_to_csv(df_new[columns], destination_file_new)
                 else:
                     load_to_csv(df[columns], destination_file_new)
+
+def task_upload_files_to_blob():
+    blob_client = get_blob_service_client_connection_string()
+    files = list(Path("data_dump/processed").glob("SANCTIONS_LIST*.CSV"))
+
+    for f in files:
+        upload_blob_file(blob_client, f)

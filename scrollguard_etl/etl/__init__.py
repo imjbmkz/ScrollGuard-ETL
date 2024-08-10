@@ -9,4 +9,5 @@ from ._transform import (
 )
 from ._load import (
     load_to_csv,
+    upload_blob_file
 )

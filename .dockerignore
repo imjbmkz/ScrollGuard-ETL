@@ -12,3 +12,4 @@ data_dump
 *.ipynb
 poetry.lock
 pyproject.toml
+.env-sample

@@ -1,9 +1,11 @@
+import os
 import sys
 import json
 import requests
 import urllib3
 import ssl
 from loguru import logger
+from azure.storage.blob import BlobServiceClient
 
 logger.remove(0)
 logger.add(sys.stdout, level="INFO")
@@ -33,3 +35,10 @@ def get_legacy_session():
 def get_config() -> dict:
     with open("config/config.json") as fp:
         return json.load(fp)
+    
+def get_blob_service_client_connection_string() -> BlobServiceClient:
+    connection_string = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+    # Create the BlobServiceClient object
+    blob_service_client = BlobServiceClient.from_connection_string(connection_string)
+
+    return blob_service_client
