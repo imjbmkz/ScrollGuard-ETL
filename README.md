@@ -8,7 +8,7 @@ The ScrollGuard data pipeline pulls sanctions listings from various entities (su
 - The raw files are downloaded using Python from their respective sources in their respective raw format
 - The files are then preprocessed based on pre-defined transformation steps on the `config.json` file
 - The preprocessed files are saved to CSV format and are uploaded to Azure Blob Storage
-- The files in the Blob Storage are then preprocessed further via pipelines in Azure Synapse
+- The files in the Blob Storage are loaded to Azure Database using Azure Data Factory
 
 ## Prerequisites
 - Python 3.11
